@@ -1,0 +1,33 @@
+{
+  "name": "lukasundlukas",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "coldraclette <timo.taennler@protonmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "npx @sanity/cli build ../public/studio -y",
+    "env": "cp ../.env .env.development",
+    "prestart": "npm run env",
+    "start": "npx @sanity/cli start"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.31.1",
+    "@sanity/core": "^2.31.1",
+    "@sanity/default-layout": "^2.31.1",
+    "@sanity/default-login": "^2.31.1",
+    "@sanity/desk-tool": "^2.31.1",
+    "@sanity/eslint-config-studio": "^2.0.0",
+    "@sanity/vision": "^2.31.1",
+    "eslint": "^8.6.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {}
+}

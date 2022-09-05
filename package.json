@@ -3,17 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "npm run build:sanity && npm run build:web",
+    "build:sanity": "npm --prefix studio run build",
+    "build:web": "next build",
+    "dev": "next",
+    "postinstall": "(cd studio && npx @sanity/cli install)",
+    "start:sanity": "npm --prefix studio run start", 
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^1.0.6",
+    "@sanity/client": "^3.3.6",
+    "@sanity/image-url": "^1.0.1",
     "next": "12.2.5",
+    "next-sanity": "^0.8.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@sanity/cli": "^2.31.1",
     "@types/node": "^18.7.14",
     "@types/react": "^18.0.18",
     "autoprefixer": "^10.4.8",
