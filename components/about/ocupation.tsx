@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 interface OcupationProps {
   title: string;
-  timespan1: string;
+  timespan1?: string;
   timespan2?: string;
   timespan3?: string;
   timespan4?: string;
@@ -11,7 +11,7 @@ interface OcupationProps {
   workTitle3?: string;
   workTitle4?: string;
   text?: string;
-  education?: boolean;
+  text2?: string;
 }
 
 export const Ocupation: FC<OcupationProps> = ({
@@ -25,7 +25,7 @@ export const Ocupation: FC<OcupationProps> = ({
   workTitle3,
   workTitle4,
   text,
-  education = false,
+  text2,
 }) => {
   return (
     <div className="my-4">
@@ -45,8 +45,8 @@ export const Ocupation: FC<OcupationProps> = ({
         </div>
       </div>
       <div>
-        {!education && <p>Kunden</p>}
         <p>{text}</p>
+        <p>{text2}</p>
       </div>
     </div>
   );

@@ -38,4 +38,5 @@ next-env.d.ts
 todo.md
 
 studio/node_modules
+studio/static
 backend

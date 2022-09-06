@@ -3,6 +3,7 @@ import Image from "next/image";
 
 interface InformationProps {
   name: string;
+  workTitle: string;
   imageUrl: string;
   street: string;
   postcode: string;
@@ -12,6 +13,7 @@ interface InformationProps {
 
 export const Information = ({
   name,
+  workTitle,
   imageUrl,
   street,
   postcode,
@@ -20,8 +22,15 @@ export const Information = ({
 }: InformationProps) => {
   return (
     <div>
-      <p>{name}</p>
-      <Image alt="Portraitbild" src={imageUrl} width={200} height={200} />
+      <p>
+        {name}, {workTitle}
+      </p>
+      <Image
+        alt="Portraitbild"
+        src={imageUrl ? imageUrl : "/images/placeholder2.jpg"}
+        width={200}
+        height={200}
+      />
       <p>{street}</p>
       <p>{postcode}</p>
       <p>{tel}</p>
