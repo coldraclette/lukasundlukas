@@ -1,17 +1,20 @@
 import Link from "next/link";
 import React, { FC, useState } from "react";
 import Image from "next/image";
+import { urlForImage } from "../../lib/sanity";
 
 interface WorkThumbnailProps {
   name: string;
-  imageUrl?: string;
+  imageUrl: string;
   num: number;
+  slug: string;
 }
 
 export const WorkThumbnail: FC<WorkThumbnailProps> = ({
   name,
   imageUrl,
   num,
+  slug,
 }) => {
   const [paddingTop, setPaddingTop] = useState<string>("0");
 
@@ -20,12 +23,12 @@ export const WorkThumbnail: FC<WorkThumbnailProps> = ({
       className={`work-thumbnail-${num} work-thumbnail relative `}
       style={{ paddingTop }}
     >
-      <Link href={`/work/${name}`}>
+      <Link href={`/work/${slug}`}>
         <a>
           <div>
             <Image
               alt="Portraitbild"
-              src="/images/placeholder2.jpg"
+              src={urlForImage(imageUrl).url()}
               layout="fill"
               objectFit="contain"
               onLoad={({ target }) => {

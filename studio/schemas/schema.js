@@ -8,6 +8,7 @@ import about_amgwerd from "./about_amgwerd";
 import about_frischknecht from "./about_frischknecht";
 import experience_amgwerd from "./experience_amgwerd";
 import experience_frischknecht from "./experience_frischknecht";
+import project from "./project";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,5 +22,6 @@ export default createSchema({
     about_frischknecht,
     experience_amgwerd,
     experience_frischknecht,
+    project,
   ]),
 });
