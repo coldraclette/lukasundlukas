@@ -2,7 +2,7 @@ export default {
   name: "frontpage",
   title: "Frontpage",
   type: "document",
-  // __experimental_actions: [/* "create", "delete", */ "update", "publish"],
+  __experimental_actions: [/* "create", "delete", */ "update", "publish"],
   fields: [
     {
       name: "title",
