@@ -29,3 +29,17 @@ export type experienceData = {
   text?: string;
   text2?: string;
 };
+
+export type projectData = {
+  title: string;
+  description: string;
+  images: [];
+  video: {
+    asset: {
+      _ref: string;
+    };
+  };
+  slug: {
+    current: string;
+  };
+};

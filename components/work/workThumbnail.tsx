@@ -30,7 +30,7 @@ export const WorkThumbnail: FC<WorkThumbnailProps> = ({
               alt="Portraitbild"
               src={urlForImage(imageUrl).url()}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
               onLoad={({ target }) => {
                 const { naturalWidth, naturalHeight } =
                   target as HTMLImageElement;

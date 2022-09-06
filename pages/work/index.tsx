@@ -6,7 +6,7 @@ export default function Work({ data }: any) {
   return (
     <div>
       <h1>Work</h1>
-      <div className="work-container border mx-auto">
+      <div className="work-container mx-auto">
         <div className="work">
           {data &&
             data.map((project: any) => (

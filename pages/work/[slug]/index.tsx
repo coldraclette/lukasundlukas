@@ -1,12 +1,65 @@
 import { GetStaticProps } from "next";
-import React from "react";
+import Image from "next/image";
+import React, { useState } from "react";
 import { getAllProjectsWithSlug, getSingleProjectData } from "../../../lib/api";
+import { urlForImage } from "../../../lib/sanity";
+import { projectData } from "../../../lib/types";
+import { buildFileUrl, parseAssetId } from "@sanity/asset-utils";
 
-export default function SingleWorkPage() {
+interface Props {
+  project: projectData;
+}
+
+export default function SingleWorkPage({ project }: Props) {
+  const [paddingTop, setPaddingTop] = useState<string>("0");
+
+  const returnVideoUrl = () => {
+    const id = project.video.asset._ref;
+    return buildFileUrl(parseAssetId(id), {
+      projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+      dataset: "production",
+    });
+  };
+
+  const renderVideo = () => (
+    <div className="my-4">
+      <video controls preload="auto" width="100%">
+        <source src={returnVideoUrl()} />
+      </video>
+    </div>
+  );
+
   return (
-    <>
-      <p>single work page</p>
-    </>
+    <div>
+      <h1 className="text-6xl bold">{project.title}</h1>
+      <p className="text-lg font-thin mt-2">{project.description}</p>
+      {project.video && renderVideo()}
+      <div>
+        {project.images.map((img: any) => {
+          return (
+            <div
+              className="relative mb-4"
+              style={{ paddingTop }}
+              key={img._key}
+            >
+              <Image
+                alt="Portraitbild"
+                src={urlForImage(img).url()}
+                layout="fill"
+                objectFit="contain"
+                onLoad={({ target }) => {
+                  const { naturalWidth, naturalHeight } =
+                    target as HTMLImageElement;
+                  setPaddingTop(
+                    `calc(100% / (${naturalWidth} / ${naturalHeight})`
+                  );
+                }}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -14,7 +67,7 @@ export const getStaticPaths = async () => {
   const allProjects = await getAllProjectsWithSlug();
 
   return {
-    paths: allProjects?.map((project: any) => ({
+    paths: allProjects?.map((project: projectData) => ({
       params: { slug: project.slug.current },
     })),
     fallback: false,
