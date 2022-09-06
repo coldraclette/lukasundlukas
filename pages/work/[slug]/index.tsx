@@ -31,7 +31,7 @@ export default function SingleWorkPage({ project }: Props) {
 
   return (
     <div>
-      <h1 className="text-6xl bold">{project.title}</h1>
+      <h1 className="text-6xl font-bold">{project.title}</h1>
       <p className="text-lg font-thin mt-2">{project.description}</p>
       {project.video && renderVideo()}
       <div>

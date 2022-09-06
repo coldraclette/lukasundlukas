@@ -2,14 +2,15 @@ import React from "react";
 import Head from "next/head";
 import { Hero } from "../components/hero";
 import { NavigationFrontpage } from "../components/navigationFrontpage";
-import { getFrontpageData } from "../lib/api";
+import { getFrontpageData, getProjectsData } from "../lib/api";
 import { frontpageData } from "../lib/types";
+import { WorkThumbnail } from "../components/work/workThumbnail";
 
 interface Props {
   data: frontpageData;
 }
 
-export default function Home({ data }: Props) {
+export default function Home({ data, projects }: any) {
   const { title, subtitle, introduction } = data;
   return (
     <div>
@@ -19,9 +20,22 @@ export default function Home({ data }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Hero title={title} subtitle={subtitle} introduction={introduction} />
       <div>
-        <Hero title={title} subtitle={subtitle} introduction={introduction} />
-        <NavigationFrontpage />
+        <div className="work-container mx-auto">
+          <div className="work">
+            {projects &&
+              projects.map((project: any) => (
+                <WorkThumbnail
+                  key={project._id}
+                  name={project.title}
+                  imageUrl={project.thumbnail}
+                  num={project.number}
+                  slug={project.slug.current}
+                />
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -29,8 +43,10 @@ export default function Home({ data }: Props) {
 
 export const getStaticProps = async ({ preview = false }) => {
   const data = await getFrontpageData(preview);
+  const projects = await getProjectsData(preview);
+
   return {
-    props: { data, preview },
+    props: { data, projects, preview },
     // check revalidate to be sure
     revalidate: 1,
   };

@@ -16,28 +16,16 @@ export const WorkThumbnail: FC<WorkThumbnailProps> = ({
   num,
   slug,
 }) => {
-  const [paddingTop, setPaddingTop] = useState<string>("0");
-
   return (
-    <div
-      className={`work-thumbnail-${num} work-thumbnail relative `}
-      style={{ paddingTop }}
-    >
+    <div className={`work-thumbnail-${num} work-thumbnail relative overflow-hidden rounded`}>
       <Link href={`/work/${slug}`}>
         <a>
-          <div>
+          <div style={{ height: 220, width: 300 }}>
             <Image
               alt="Portraitbild"
               src={urlForImage(imageUrl).url()}
               layout="fill"
               objectFit="cover"
-              onLoad={({ target }) => {
-                const { naturalWidth, naturalHeight } =
-                  target as HTMLImageElement;
-                setPaddingTop(
-                  `calc(100% / (${naturalWidth} / ${naturalHeight})`
-                );
-              }}
             />
           </div>
           <div className="work-name-wrapper absolute bottom-0 inset-0 flex justify-center items-center">

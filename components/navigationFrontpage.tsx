@@ -4,13 +4,19 @@ export const NavigationFrontpage = () => {
   return (
     <div className="flex justify-center">
       <div className="mx-2">
-        <Link href="/work">work</Link>
+        <Link href="/work">
+          <a className="text-4xl">work</a>
+        </Link>
       </div>
       <div className="mx-2">
-        <Link href="/about">about</Link>
+        <Link href="/about">
+          <a className="text-4xl">about</a>
+        </Link>
       </div>
       <div className="mx-2">
-        <Link href="/contact">contact</Link>
+        <Link href="/contact">
+          <a className="text-4xl">contact</a>
+        </Link>
       </div>
     </div>
   );
