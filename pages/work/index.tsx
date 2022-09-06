@@ -3,10 +3,6 @@ import Link from "next/link";
 import React from "react";
 import { WorkThumbnail } from "../../components/work/workThumbnail";
 
-{
-  /* https://www.youtube.com/watch?v=sZJrcOfBaNY */
-}
-
 export default function Work() {
   return (
     <div>

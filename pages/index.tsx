@@ -3,15 +3,14 @@ import Head from "next/head";
 import { Hero } from "../components/hero";
 import { NavigationFrontpage } from "../components/navigationFrontpage";
 import { getFrontpageData } from "../lib/api";
+import { frontpageData } from "../lib/types";
 
 interface Props {
-  title: string;
-  subtitle: string;
-  introduction: string;
-  preview: boolean;
+  data: frontpageData;
 }
 
-export default function Home({ title, subtitle, introduction }: Props) {
+export default function Home({ data }: Props) {
+  const { title, subtitle, introduction } = data;
   return (
     <div>
       <Head>
@@ -29,9 +28,9 @@ export default function Home({ title, subtitle, introduction }: Props) {
 }
 
 export const getStaticProps = async ({ preview = false }) => {
-  const { title, subtitle, introduction } = await getFrontpageData(preview);
+  const data = await getFrontpageData(preview);
   return {
-    props: { title, subtitle, introduction, preview },
+    props: { data, preview },
     // check revalidate to be sure
     revalidate: 1,
   };

@@ -1,10 +1,14 @@
 import React, { FC } from "react";
+import { aboutData, experienceData } from "../../lib/types";
 import { Information } from "./information";
 import { Ocupation } from "./ocupation";
 
-export const CV: FC = ({ data }: any) => {
-  const { aboutData, experienceData } = data;
-  console.log(experienceData);
+interface Props {
+  aboutData: aboutData;
+  experienceData: experienceData[];
+}
+
+export const CV: FC<Props> = ({ aboutData, experienceData }) => {
   return (
     <div>
       <Information

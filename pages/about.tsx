@@ -10,8 +10,14 @@ import {
 export default function About({ amgwerdData, frischknechtData }: any) {
   return (
     <div className="flex justify-between">
-      <CV data={amgwerdData} />
-      <CV data={frischknechtData} />
+      <CV
+        aboutData={amgwerdData.aboutData}
+        experienceData={amgwerdData.experienceData}
+      />
+      <CV
+        aboutData={frischknechtData.aboutData}
+        experienceData={frischknechtData.experienceData}
+      />
     </div>
   );
 }
