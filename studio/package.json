@@ -7,10 +7,9 @@
   "author": "coldraclette <timo.taennler@protonmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npx @sanity/cli build ../public/studio -y",
-    "env": "cp ../.env .env.development",
-    "prestart": "npm run env",
-    "start": "npx @sanity/cli start"
+    "start": "sanity start",
+    "test": "sanity check",
+    "build": "sanity build public -y" 
   },
   "keywords": [
     "sanity"
