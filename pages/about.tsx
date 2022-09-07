@@ -8,8 +8,9 @@ import {
 } from "../lib/api";
 
 export default function About({ amgwerdData, frischknechtData }: any) {
+  console.log(amgwerdData.experienceData);
   return (
-    <div className="flex justify-between">
+    <div className="md:flex justify-between">
       <CV
         aboutData={amgwerdData.aboutData}
         experienceData={amgwerdData.experienceData}

@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { Hero } from "../components/hero";
-import { NavigationFrontpage } from "../components/navigationFrontpage";
 import { getFrontpageData, getProjectsData } from "../lib/api";
 import { frontpageData } from "../lib/types";
 import { WorkThumbnail } from "../components/work/workThumbnail";
@@ -23,7 +22,7 @@ export default function Home({ data, projects }: any) {
       <Hero title={title} subtitle={subtitle} introduction={introduction} />
       <div>
         <div className="work-container mx-auto">
-          <div className="work">
+          <div className="work md:grid">
             {projects &&
               projects.map((project: any) => (
                 <WorkThumbnail

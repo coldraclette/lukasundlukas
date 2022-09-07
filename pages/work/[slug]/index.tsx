@@ -31,8 +31,8 @@ export default function SingleWorkPage({ project }: Props) {
 
   return (
     <div>
-      <h1 className="text-6xl font-bold">{project.title}</h1>
-      <p className="text-lg font-thin mt-2">{project.description}</p>
+      <h1 className="text-4xl md:text-6xl font-bold">{project.title}</h1>
+      <p className="md:text-lg font-thin mt-2">{project.description}</p>
       {project.video && renderVideo()}
       <div>
         {project.images.map((img: any) => {
@@ -47,6 +47,7 @@ export default function SingleWorkPage({ project }: Props) {
                 src={urlForImage(img).url()}
                 layout="fill"
                 objectFit="contain"
+                className="rounded"
                 onLoad={({ target }) => {
                   const { naturalWidth, naturalHeight } =
                     target as HTMLImageElement;

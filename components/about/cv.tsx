@@ -10,7 +10,7 @@ interface Props {
 
 export const CV: FC<Props> = ({ aboutData, experienceData }) => {
   return (
-    <div>
+    <div className="flex-1 even:mt-8 md:even:mt-0">
       <Information
         name={aboutData.name}
         workTitle={aboutData.work_title}
@@ -33,6 +33,7 @@ export const CV: FC<Props> = ({ aboutData, experienceData }) => {
           workTitle2={exp.worktitle2}
           workTitle3={exp.worktitle3}
           workTitle4={exp.worktitle4}
+          customers={exp.customers}
           text={exp.text}
           text2={exp.text2}
         />
