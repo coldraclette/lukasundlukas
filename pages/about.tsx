@@ -8,7 +8,6 @@ import {
 } from "../lib/api";
 
 export default function About({ amgwerdData, frischknechtData }: any) {
-  console.log(amgwerdData.experienceData);
   return (
     <div className="md:flex justify-between">
       <CV

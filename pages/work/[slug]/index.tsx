@@ -35,30 +35,31 @@ export default function SingleWorkPage({ project }: Props) {
       <p className="md:text-lg font-thin mt-2">{project.description}</p>
       {project.video && renderVideo()}
       <div>
-        {project.images.map((img: any) => {
-          return (
-            <div
-              className="relative mb-4"
-              style={{ paddingTop }}
-              key={img._key}
-            >
-              <Image
-                alt="Portraitbild"
-                src={urlForImage(img).url()}
-                layout="fill"
-                objectFit="contain"
-                className="rounded"
-                onLoad={({ target }) => {
-                  const { naturalWidth, naturalHeight } =
-                    target as HTMLImageElement;
-                  setPaddingTop(
-                    `calc(100% / (${naturalWidth} / ${naturalHeight})`
-                  );
-                }}
-              />
-            </div>
-          );
-        })}
+        {project.images &&
+          project.images.map((img: any) => {
+            return (
+              <div
+                className="relative mb-4"
+                style={{ paddingTop }}
+                key={img._key}
+              >
+                <Image
+                  alt="Portraitbild"
+                  src={urlForImage(img).url()}
+                  layout="fill"
+                  objectFit="contain"
+                  className="rounded"
+                  onLoad={({ target }) => {
+                    const { naturalWidth, naturalHeight } =
+                      target as HTMLImageElement;
+                    setPaddingTop(
+                      `calc(100% / (${naturalWidth} / ${naturalHeight})`
+                    );
+                  }}
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );
