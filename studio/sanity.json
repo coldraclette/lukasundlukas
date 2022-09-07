@@ -13,7 +13,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "cloudinary",
-    "media-library"
+    "media-library",
+    "vercel-deploy"
   ],
   "env": {
     "development": {

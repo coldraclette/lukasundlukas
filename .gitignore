@@ -40,4 +40,5 @@ todo.md
 studio/node_modules
 studio/static
 studio/public
+studio/dist
 backend

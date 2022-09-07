@@ -9,7 +9,7 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "build": "sanity build public -y" 
+    "build": "sanity build public -y"
   },
   "keywords": [
     "sanity"
@@ -28,6 +28,7 @@
     "react-dom": "^17.0",
     "sanity-plugin-cloudinary": "^0.2.2",
     "sanity-plugin-media-library": "^2.1.1",
+    "sanity-plugin-vercel-deploy": "^2.1.6",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {}
