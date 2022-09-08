@@ -110,6 +110,7 @@ a {
 
 .thumbnail-wrapper {
   height: 220px;
+  position: relative;
 }
 
 @media screen and (max-width: 900px) {

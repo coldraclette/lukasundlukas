@@ -24,9 +24,9 @@ export default function Home({ data, projects }: any) {
         <div className="work-container mx-auto">
           <div className="work md:grid">
             {projects &&
-              projects.map((project: any) => (
+              projects.map((project: any, index: any) => (
                 <WorkThumbnail
-                  key={project._id}
+                  key={index}
                   name={project.title}
                   imageUrl={project.thumbnail}
                   num={project.number}

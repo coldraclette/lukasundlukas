@@ -12,6 +12,7 @@ export type aboutData = {
   postcode: string;
   tel: string;
   mail: string;
+  linkedin: string;
 };
 
 export type experienceData = {

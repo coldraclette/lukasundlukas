@@ -13,11 +13,15 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="h-full max-w-screen-xl m-auto p-4">
       <div className="flex justify-between items-center mb-4">
-        <div className="text-lg font-bold">Lukas und Lukas.</div>
+        <Link href="/">
+          <a className="text-lg font-bold">Lukas und Lukas.</a>
+        </Link>
         <div className="flex">
           <div className="mr-2">
             <Link href="/">
-              <a className={`text-lg ${activeLink(router.pathname, "/")}`}>work</a>
+              <a className={`text-lg ${activeLink(router.pathname, "/")}`}>
+                work
+              </a>
             </Link>
           </div>
           <div>

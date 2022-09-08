@@ -21,7 +21,12 @@ export default {
     },
     {
       name: "number",
-      title: "Position number",
+      title: "Position number desktop",
+      type: "number",
+    },
+    {
+      name: "number",
+      title: "Position number mobile",
       type: "number",
     },
     {

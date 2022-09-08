@@ -69,7 +69,7 @@ export const Ocupation: FC<OcupationProps> = ({
         </div>
       )}
       {text && (
-        <div>
+        <div className="mb-4">
           <p className="text-sm md:text-base">{text}</p>
           {text2 && <p className="text-sm md:text-base">{text2}</p>}
         </div>

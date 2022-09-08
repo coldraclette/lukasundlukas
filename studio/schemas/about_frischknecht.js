@@ -42,5 +42,6 @@ export default {
       title: "Mail",
       type: "string",
     },
+    { name: "linkedin", title: "Linkedin URL", type: "string" },
   ],
 };
