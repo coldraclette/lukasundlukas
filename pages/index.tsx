@@ -10,6 +10,7 @@ interface Props {
 }
 
 export default function Home({ data, projects }: any) {
+  console.log(projects)
   const { title, subtitle, introduction } = data;
   return (
     <div>
@@ -22,7 +23,7 @@ export default function Home({ data, projects }: any) {
       <Hero title={title} subtitle={subtitle} introduction={introduction} />
       <div>
         <div className="work-container mx-auto">
-          <div className="work md:grid">
+          <div className="work flex flex-col md:grid md:gap-8">
             {projects &&
               projects.map((project: any, index: any) => (
                 <WorkThumbnail
@@ -30,6 +31,7 @@ export default function Home({ data, projects }: any) {
                   name={project.title}
                   imageUrl={project.thumbnail}
                   num={project.number}
+                  numMobile={project.number_mobile}
                   slug={project.slug.current}
                 />
               ))}

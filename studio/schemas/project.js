@@ -25,7 +25,7 @@ export default {
       type: "number",
     },
     {
-      name: "number",
+      name: "number_mobile",
       title: "Position number mobile",
       type: "number",
     },
