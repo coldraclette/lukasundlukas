@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function Home({ data, projects }: any) {
-  console.log(projects)
   const { title, subtitle, introduction } = data;
   return (
     <div>
