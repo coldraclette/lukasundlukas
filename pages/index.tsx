@@ -4,6 +4,7 @@ import { Hero } from "../components/hero";
 import { getFrontpageData, getProjectsData } from "../lib/api";
 import { frontpageData } from "../lib/types";
 import { WorkThumbnail } from "../components/work/workThumbnail";
+import { SEO } from "../components/SEO";
 
 interface Props {
   data: frontpageData;
@@ -11,14 +12,10 @@ interface Props {
 
 export default function Home({ data, projects }: any) {
   const { title, subtitle, introduction } = data;
+
   return (
     <div>
-      <Head>
-        <title>Lukas und Lukas</title>
-        <meta name="description" content={introduction} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <SEO desc={subtitle} />
       <Hero title={title} subtitle={subtitle} introduction={introduction} />
       <div>
         <div className="work-container mx-auto">

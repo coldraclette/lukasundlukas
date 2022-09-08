@@ -43,4 +43,5 @@ export type projectData = {
   slug: {
     current: string;
   };
+  thumbnail: any
 };

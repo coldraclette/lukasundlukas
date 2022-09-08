@@ -1,5 +1,6 @@
 import React from "react";
 import { CV } from "../components/about/cv";
+import { SEO } from "../components/SEO";
 import {
   getAboutAmgwerdData,
   getAboutFrischknechtData,
@@ -9,16 +10,19 @@ import {
 
 export default function About({ amgwerdData, frischknechtData }: any) {
   return (
-    <div className="md:flex justify-between">
-      <CV
-        aboutData={amgwerdData.aboutData}
-        experienceData={amgwerdData.experienceData}
-      />
-      <CV
-        aboutData={frischknechtData.aboutData}
-        experienceData={frischknechtData.experienceData}
-      />
-    </div>
+    <>
+      <SEO title="About" desc="Lebensläufe von Lukas und Lukas" url="about" />
+      <div className="md:flex justify-between">
+        <CV
+          aboutData={amgwerdData.aboutData}
+          experienceData={amgwerdData.experienceData}
+        />
+        <CV
+          aboutData={frischknechtData.aboutData}
+          experienceData={frischknechtData.experienceData}
+        />
+      </div>
+    </>
   );
 }
 
