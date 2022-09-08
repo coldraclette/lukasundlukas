@@ -5,6 +5,15 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/work",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
