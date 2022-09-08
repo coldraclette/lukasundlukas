@@ -45,6 +45,5 @@ export const getStaticProps = async ({ preview = false }) => {
   return {
     props: { data, projects, preview },
     // check revalidate to be sure
-    revalidate: 1,
   };
 };

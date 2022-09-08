@@ -48,6 +48,5 @@ export const getStaticProps = async ({ preview = false }) => {
       preview,
     },
     // check revalidate to be sure
-    revalidate: 1,
   };
 };
