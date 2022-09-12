@@ -1,23 +1,43 @@
 import Link from "next/link";
-import React, { FC, useState } from "react";
-import Image from "next/image";
-import { urlForImage } from "../../lib/sanity";
+import React, { FC } from "react";
+import { WorkThumbnailText } from "./workThumbnailText";
+import { WorkThumbnailImage } from "./workThumbnailImage";
+import { WorkThumbnailVideo } from "./workThumbnailVideo";
 
 interface WorkThumbnailProps {
-  name: string;
-  imageUrl: string;
+  thumbnail?: {
+    videoWebm: { image: string | null } | undefined;
+    videoMp4: { image: string | null } | undefined;
+    image: string | null;
+  };
   num: number;
   numMobile: number;
   slug: string;
+  title: string;
+  subtitle?: string;
 }
 
 export const WorkThumbnail: FC<WorkThumbnailProps> = ({
-  name,
-  imageUrl,
   num,
   numMobile,
   slug,
+  title,
+  subtitle,
+  thumbnail,
 }) => {
+  const renderThumbnail = () => {
+    if (thumbnail && thumbnail.image) {
+      return <WorkThumbnailImage title={title} image={thumbnail.image} />;
+    } else if (thumbnail && thumbnail.videoWebm) {
+      return (
+        <WorkThumbnailVideo
+          videoWebm={thumbnail.videoWebm}
+          videoMp4={thumbnail.videoMp4}
+        />
+      );
+    }
+  };
+
   return (
     <div
       className={`work-thumbnail-${num} work-thumbnail text-center md:hover:scale-105 md:hover:z-10 relative overflow-hidden rounded shadow hover:shadow-md mb-4 md:mb-0 `}
@@ -25,19 +45,8 @@ export const WorkThumbnail: FC<WorkThumbnailProps> = ({
     >
       <Link href={`/work/${slug}`}>
         <a>
-          <div className="thumbnail-wrapper">
-            {imageUrl && (
-              <Image
-                alt="Portraitbild"
-                src={urlForImage(imageUrl).url()}
-                layout="fill"
-                objectFit="cover"
-              />
-            )}
-          </div>
-          <div className="work-name-wrapper opacity-100 md:opacity-0 md:hover:opacity-100 absolute bottom-0 inset-0 flex justify-center items-center">
-            <div className="work-name text-3xl font-bold">{name}</div>
-          </div>
+          {renderThumbnail()}
+          <WorkThumbnailText title={title} subtitle={subtitle} />
         </a>
       </Link>
     </div>

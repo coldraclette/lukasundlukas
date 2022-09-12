@@ -3,11 +3,8 @@ export default {
   title: "Projects",
   type: "document",
   fields: [
-    {
-      name: "title",
-      title: "Title",
-      type: "string",
-    },
+    { name: "title", title: "Title", type: "string" },
+    { name: "subtitle", title: "Subtitle", type: "string" },
     {
       name: "slug",
       title: "Slug",
@@ -37,15 +34,39 @@ export default {
     {
       name: "thumbnail",
       title: "Thumbnail",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      type: "object",
+      fields: [
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: "videoWebm",
+          title: "Video Webm",
+          description: "neuste technologie .webm",
+          type: "file",
+        },
+        {
+          name: "videoMp4",
+          title: "Video MP4",
+          description: "fallback video .mp4",
+          type: "file",
+        },
+      ],
     },
     {
       name: "video",
       title: "Video",
-      type: "file",
+      type: "array",
+      of: [
+        {
+          type: "file",
+        },
+      ],
     },
     {
       name: "images",

@@ -33,15 +33,18 @@ export type experienceData = {
 
 export type projectData = {
   title: string;
+  subtitle: string;
   description: string;
   images: [];
-  video: {
-    asset: {
-      _ref: string;
-    };
-  };
+  video: [
+    {
+      asset: {
+        _ref: string;
+      };
+    }
+  ];
   slug: {
     current: string;
   };
-  thumbnail: any
+  thumbnail: any;
 };
