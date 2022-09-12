@@ -10,7 +10,7 @@ interface Props {
 
 export default function Work({ projects }: any) {
   return (
-    <div className="mt-12">
+    <div className="md:mt-12">
       <SEO title="work" desc="Unsere Projekte" />
       <WorkWrapper projects={projects} />
     </div>
