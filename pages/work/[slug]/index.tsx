@@ -36,7 +36,7 @@ export default function SingleWorkPage({ project }: Props) {
         title={project.title}
         desc={project.description}
         url={project.slug.current}
-        imgUrl={urlForImage(project.thumbnail).url()}
+        // imgUrl={urlForImage(project.thumbnail).url()}
       />
       <h1 className="text-4xl md:text-6xl font-bold">{project.title}</h1>
       <p className="md:text-lg font-thin mt-2">{project.description}</p>

@@ -20,7 +20,7 @@ export const WorkThumbnail: FC<WorkThumbnailProps> = ({
 }) => {
   return (
     <div
-      className={`work-thumbnail-${num} work-thumbnail md:hover:scale-105 md:hover:z-10 relative overflow-hidden rounded shadow hover:shadow-md mb-4 md:mb-0 `}
+      className={`work-thumbnail-${num} work-thumbnail text-center md:hover:scale-105 md:hover:z-10 relative overflow-hidden rounded shadow hover:shadow-md mb-4 md:mb-0 `}
       style={{ order: numMobile }}
     >
       <Link href={`/work/${slug}`}>
