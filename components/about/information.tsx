@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { urlForImage } from "../../lib/sanity";
 
 interface InformationProps {
   name: string;
@@ -29,7 +30,7 @@ export const Information = ({
       <div className="relative">
         <Image
           alt="Portraitbild"
-          src={imageUrl ? imageUrl : "/images/placeholder2.jpg"}
+          src={urlForImage(imageUrl).url()}
           className="rounded"
           width={300}
           height={300}

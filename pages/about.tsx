@@ -44,9 +44,7 @@ export const getStaticProps = async ({ preview = false }) => {
         aboutData: aboutFrischknechtData,
         experienceData: experienceFrischknechtData,
       },
-
       preview,
     },
-    // check revalidate to be sure
   };
 };
