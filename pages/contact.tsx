@@ -12,7 +12,6 @@ export default function Contact({ amgwerdData, frischknechtData }: any) {
           postcode={amgwerdData.aboutData.postcode}
           tel={amgwerdData.aboutData.tel}
           mail={amgwerdData.aboutData.mail}
-          linkedin={amgwerdData.aboutData.linkedin}
         />
       </div>
       <Information

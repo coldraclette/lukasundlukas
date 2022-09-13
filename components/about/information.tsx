@@ -2,7 +2,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { urlForImage } from "../../lib/sanity";
-import { Linkedin } from "./linkedin";
 
 interface InformationProps {
   name: string;
@@ -12,7 +11,6 @@ interface InformationProps {
   postcode?: string;
   tel?: string;
   mail?: string;
-  linkedin?: string;
 }
 
 export const Information = ({
@@ -23,7 +21,6 @@ export const Information = ({
   postcode,
   tel,
   mail,
-  linkedin,
 }: InformationProps) => {
   const router = useRouter();
 
@@ -52,7 +49,6 @@ export const Information = ({
           <a className="font-thin" href={`mailto:${mail}`}>
             {mail}
           </a>
-          <Linkedin url={linkedin} />
         </>
       )}
     </div>
