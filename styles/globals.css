@@ -112,7 +112,6 @@ body {
 }
 
 .work-name-wrapper {
-  /* opacity: 0; */
   background: rgba(30, 30, 30, 0.4);
 }
 
@@ -134,5 +133,11 @@ body {
 @media screen and (max-width: 768px) {
   .thumbnail-wrapper {
     height: 280px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .work-thumbnail {
+    height: 250px;
   }
 }
