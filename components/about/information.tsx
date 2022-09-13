@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { urlForImage } from "../../lib/sanity";
+import { urlForImage, urlForPlaceholder } from "../../lib/sanity";
 
 interface InformationProps {
   name: string;
@@ -23,7 +23,6 @@ export const Information = ({
   mail,
 }: InformationProps) => {
   const router = useRouter();
-
   return (
     <div>
       <div className="mb-2">
@@ -38,6 +37,8 @@ export const Information = ({
             className="rounded"
             width={300}
             height={300}
+            placeholder="blur"
+            blurDataURL={urlForPlaceholder(imageUrl).url()}
           />
         </div>
       )}

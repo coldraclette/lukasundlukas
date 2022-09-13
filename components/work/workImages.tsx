@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC, useState } from "react";
-import { urlForImage } from "../../lib/sanity";
+import { urlForImage, urlForPlaceholder } from "../../lib/sanity";
 
 interface props {
   images: [];
@@ -20,6 +20,8 @@ export const WorkImages: FC<props> = ({ images }) => {
               layout="fill"
               objectFit="contain"
               className="rounded"
+              placeholder="blur"
+              blurDataURL={urlForPlaceholder(img).url()}
               onLoad={({ target }) => {
                 const { naturalWidth, naturalHeight } =
                   target as HTMLImageElement;
