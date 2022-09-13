@@ -1,18 +1,33 @@
 import React from "react";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { CV } from "../components/about/cv";
 import { SEO } from "../components/SEO";
 import {
   getAboutAmgwerdData,
   getAboutFrischknechtData,
+  getAboutPageData,
   getExperienceAmgwerdData,
   getExperienceFrischknechtData,
 } from "../lib/api";
 
-export default function About({ amgwerdData, frischknechtData }: any) {
+export default function About({
+  amgwerdData,
+  frischknechtData,
+  aboutPageData,
+}: any) {
+  const components: PortableTextComponents = {
+    block: {
+      normal: ({ children }) => (
+        <p className="mb-2 md:text-lg font-thin">{children}</p>
+      ),
+    },
+  };
+
   return (
     <>
       <SEO title="About" desc="Lebensläufe von Lukas und Lukas" url="about" />
-      <div className="md:flex justify-between">
+      <PortableText value={aboutPageData.body} components={components} />
+      <div className="md:flex justify-between mt-4">
         <CV
           aboutData={amgwerdData.aboutData}
           experienceData={amgwerdData.experienceData}
@@ -34,6 +49,8 @@ export const getStaticProps = async ({ preview = false }) => {
     preview
   );
 
+  const aboutPageData = await getAboutPageData(preview);
+
   return {
     props: {
       amgwerdData: {
@@ -44,6 +61,7 @@ export const getStaticProps = async ({ preview = false }) => {
         aboutData: aboutFrischknechtData,
         experienceData: experienceFrischknechtData,
       },
+      aboutPageData,
       preview,
     },
   };

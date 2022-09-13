@@ -51,7 +51,8 @@ export default {
     {
       name: "customers",
       title: "Customers",
-      type: "string",
+      type: "text",
+      row: 1
     },
     {
       name: "text",
