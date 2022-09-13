@@ -12,6 +12,7 @@ export default function Contact({ amgwerdData, frischknechtData }: any) {
           postcode={amgwerdData.aboutData.postcode}
           tel={amgwerdData.aboutData.tel}
           mail={amgwerdData.aboutData.mail}
+          imageUrl={amgwerdData.aboutData.imageurl}
         />
       </div>
       <Information
@@ -21,6 +22,7 @@ export default function Contact({ amgwerdData, frischknechtData }: any) {
         postcode={frischknechtData.aboutData.postcode}
         tel={frischknechtData.aboutData.tel}
         mail={frischknechtData.aboutData.mail}
+        imageUrl={frischknechtData.aboutData.imageurl}
       />
     </div>
   );
