@@ -3,8 +3,8 @@ import { getAboutAmgwerdData, getAboutFrischknechtData } from "../lib/api";
 
 export default function Contact({ amgwerdData, frischknechtData }: any) {
   return (
-    <div className="flex flex-col md:flex-row md:justify-center md:mt-12">
-      <div className="mb-4 md:mb-0 md:mr-8">
+    <div className="flex flex-col md:flex-row about-wrapper">
+      <div className="mb-4 md:mb-0 flex-1">
         <Information
           name={amgwerdData.aboutData.name}
           workTitle={amgwerdData.aboutData.work_title}
@@ -15,6 +15,7 @@ export default function Contact({ amgwerdData, frischknechtData }: any) {
           imageUrl={amgwerdData.aboutData.imageurl}
         />
       </div>
+      <div className="flex-1">
       <Information
         name={frischknechtData.aboutData.name}
         workTitle={frischknechtData.aboutData.work_title}
@@ -24,6 +25,7 @@ export default function Contact({ amgwerdData, frischknechtData }: any) {
         mail={frischknechtData.aboutData.mail}
         imageUrl={frischknechtData.aboutData.imageurl}
       />
+      </div>
     </div>
   );
 }
