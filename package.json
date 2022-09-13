@@ -3,12 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run build:sanity && npm run build:web",
-    "build:sanity": "npm --prefix studio run build",
-    "build:web": "next build",
+    "build": "yarn next build",
     "dev": "next",
-    "postinstall": "(cd studio && npx @sanity/cli install)",
-    "start:sanity": "npm --prefix studio run start",
     "lint": "next lint"
   },
   "dependencies": {

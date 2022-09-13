@@ -8,10 +8,10 @@ interface InformationProps {
   name: string;
   workTitle: string;
   imageUrl?: string;
-  street: string;
-  postcode: string;
-  tel: string;
-  mail: string;
+  street?: string;
+  postcode?: string;
+  tel?: string;
+  mail?: string;
   linkedin?: string;
 }
 
@@ -44,13 +44,17 @@ export const Information = ({
           />
         </div>
       )}
-      <p className="font-thin">{street}</p>
-      <p className="font-thin">{postcode}</p>
-      <p className="font-thin">{tel}</p>
-      <a className="font-thin" href={`mailto:${mail}`}>
-        {mail}
-      </a>
-      {router.pathname === "/contact" && <Linkedin url={linkedin} />}
+      {router.pathname === "/contact" && (
+        <>
+          <p className="font-thin">{street}</p>
+          <p className="font-thin">{postcode}</p>
+          <p className="font-thin">{tel}</p>
+          <a className="font-thin" href={`mailto:${mail}`}>
+            {mail}
+          </a>
+          <Linkedin url={linkedin} />
+        </>
+      )}
     </div>
   );
 };

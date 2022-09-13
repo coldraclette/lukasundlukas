@@ -15,10 +15,6 @@ export const CV: FC<Props> = ({ aboutData, experienceData }) => {
         name={aboutData.name}
         workTitle={aboutData.work_title}
         imageUrl={aboutData.imageurl}
-        street={aboutData.street}
-        postcode={aboutData.postcode}
-        tel={aboutData.tel}
-        mail={aboutData.mail}
       />
 
       {experienceData.map((exp: any) => (
