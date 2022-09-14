@@ -10,6 +10,8 @@ import experience_amgwerd from "./experience_amgwerd";
 import experience_frischknecht from "./experience_frischknecht";
 import project from "./project";
 import about from "./about";
+import awards_amgwerd from "./awards_amgwerd";
+import awards_frischknecht from "./awards_frischknecht";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,5 +27,7 @@ export default createSchema({
     experience_frischknecht,
     project,
     about,
+    awards_amgwerd,
+    awards_frischknecht,
   ]),
 });

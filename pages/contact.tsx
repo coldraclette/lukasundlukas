@@ -1,30 +1,14 @@
-import { Information } from "../components/about/information";
+import { ContactInfo } from "../components/contact/contactInfo";
 import { getAboutAmgwerdData, getAboutFrischknechtData } from "../lib/api";
 
 export default function Contact({ amgwerdData, frischknechtData }: any) {
   return (
     <div className="flex flex-col md:flex-row about-wrapper">
       <div className="mb-4 md:mb-0 flex-1">
-        <Information
-          name={amgwerdData.aboutData.name}
-          workTitle={amgwerdData.aboutData.work_title}
-          street={amgwerdData.aboutData.street}
-          postcode={amgwerdData.aboutData.postcode}
-          tel={amgwerdData.aboutData.tel}
-          mail={amgwerdData.aboutData.mail}
-          imageUrl={amgwerdData.aboutData.imageurl}
-        />
+        <ContactInfo data={amgwerdData} />
       </div>
       <div className="flex-1">
-      <Information
-        name={frischknechtData.aboutData.name}
-        workTitle={frischknechtData.aboutData.work_title}
-        street={frischknechtData.aboutData.street}
-        postcode={frischknechtData.aboutData.postcode}
-        tel={frischknechtData.aboutData.tel}
-        mail={frischknechtData.aboutData.mail}
-        imageUrl={frischknechtData.aboutData.imageurl}
-      />
+        <ContactInfo data={frischknechtData} />
       </div>
     </div>
   );

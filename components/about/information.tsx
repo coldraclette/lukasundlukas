@@ -17,16 +17,12 @@ export const Information = ({
   name,
   workTitle,
   imageUrl,
-  street,
-  postcode,
-  tel,
-  mail,
 }: InformationProps) => {
   const router = useRouter();
   return (
     <div>
       <div className="mb-2">
-        <p className="text-2xl font-bold ">{name}</p>
+        <p className="text-2xl font-bold">{name}</p>
         <p className="text-xl font-thin">{workTitle}</p>
       </div>
       {imageUrl && (
@@ -41,16 +37,6 @@ export const Information = ({
             blurDataURL={urlForPlaceholder(imageUrl).url()}
           />
         </div>
-      )}
-      {router.pathname === "/contact" && (
-        <>
-          <p className="font-thin">{street}</p>
-          <p className="font-thin">{postcode}</p>
-          <p className="font-thin">{tel}</p>
-          <a className="font-thin" href={`mailto:${mail}`}>
-            {mail}
-          </a>
-        </>
       )}
     </div>
   );

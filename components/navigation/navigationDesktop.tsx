@@ -1,21 +1,24 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export const Navigation = () => {
+export const NavigationDesktop = () => {
   const router = useRouter();
   const activeLink = (url: string, pathname: string) =>
     pathname === url ? "font-bold" : "";
-
   return (
-    <div className="flex justify-between items-center mb-4">
-      <Link href="/">
-        <a className="text-lg font-bold">Lukas und Lukas.</a>
-      </Link>
+    <div className="hidden sm:flex items-center">
       <div className="flex">
         <div className="mr-2">
           <Link href="/work">
             <a className={`text-lg ${activeLink(router.pathname, "/work")}`}>
               work
+            </a>
+          </Link>
+        </div>
+        <div className="mr-2">
+          <Link href="/awards">
+            <a className={`text-lg ${activeLink(router.pathname, "/work")}`}>
+              awards
             </a>
           </Link>
         </div>

@@ -5,6 +5,7 @@
   "scripts": {
     "build": "yarn next build",
     "dev": "next",
+    "start": "yarn next start",
     "lint": "next lint"
   },
   "dependencies": {

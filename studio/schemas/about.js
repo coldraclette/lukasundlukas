@@ -2,7 +2,7 @@ export default {
   name: "about",
   title: "About Page",
   type: "document",
-  // __experimental_actions: [/* "create", "delete", */ "update", "publish"],
+  __experimental_actions: [/* "create", "delete", */ "update", "publish"],
   fields: [
     {
       name: "body",
