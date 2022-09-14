@@ -9,22 +9,22 @@ export const NavigationMobile = ({ closeNav }: props) => {
     <div className="sm:hidden fixed h-screen w-full top-0 left-0 backdrop-blur-md z-40">
       <div className="flex flex-col justify-between items-center h-full">
         <div className="flex flex-col text-center justify-between h-full mt-16 mb-32">
-          <div className="text-7xl" onClick={() => closeNav()}>
+          <div className="text-7xl font-bold" onClick={() => closeNav()}>
             <Link href="/work">
               <a>work</a>
             </Link>
           </div>
-          <div className="text-7xl" onClick={() => closeNav()}>
+          <div className="text-7xl font-bold" onClick={() => closeNav()}>
             <Link href="/awards">
               <a>awards</a>
             </Link>
           </div>
-          <div className="text-7xl" onClick={() => closeNav()}>
+          <div className="text-7xl font-bold" onClick={() => closeNav()}>
             <Link href="/about">
               <a>about</a>
             </Link>
           </div>
-          <div className="text-7xl" onClick={() => closeNav()}>
+          <div className="text-7xl font-bold" onClick={() => closeNav()}>
             <Link href="/contact">
               <a>contact</a>
             </Link>
