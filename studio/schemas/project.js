@@ -56,6 +56,16 @@ export default {
           description: "fallback video .mp4",
           type: "file",
         },
+        {
+          name: "videoImage",
+          title: "Video cover image",
+          description:
+            "videos laden manchmal bei safari mobile kein vorschaubild",
+          type: "image",
+          options: {
+            hotspot: true,
+          }, 
+        },
       ],
     },
     {
