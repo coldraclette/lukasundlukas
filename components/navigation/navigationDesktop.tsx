@@ -17,7 +17,7 @@ export const NavigationDesktop = () => {
         </div>
         <div className="mr-2">
           <Link href="/awards">
-            <a className={`text-lg ${activeLink(router.pathname, "/work")}`}>
+            <a className={`text-lg ${activeLink(router.pathname, "/awards")}`}>
               awards
             </a>
           </Link>

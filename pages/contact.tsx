@@ -3,7 +3,7 @@ import { getAboutAmgwerdData, getAboutFrischknechtData } from "../lib/api";
 
 export default function Contact({ amgwerdData, frischknechtData }: any) {
   return (
-    <div className="flex flex-col md:flex-row about-wrapper">
+    <div className="flex flex-col md:flex-row about-wrapper mt-12">
       <div className="mb-4 md:mb-0 flex-1">
         <ContactInfo data={amgwerdData} />
       </div>
