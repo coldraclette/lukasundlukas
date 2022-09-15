@@ -11,7 +11,7 @@ interface Props {
 export default function Work({ projects }: any) {
   return (
     <div className="md:mt-12">
-      <SEO title="work" desc="Unsere Projekte" />
+      <SEO title="work" desc="Unsere Projekte" url="work" />
       <WorkWrapper projects={projects} />
     </div>
   );

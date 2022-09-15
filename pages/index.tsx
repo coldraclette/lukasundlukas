@@ -16,7 +16,7 @@ export default function Home({ data, projects }: any) {
 
   return (
     <div>
-      <SEO desc={subtitle} />
+      <SEO desc={subtitle} imgUrl="/public/images/lukasundlukas_screenshot.png" url="/" />
       <Hero title={title} subtitle={subtitle} introduction={introduction} />
       <WorkWrapper projects={projects} />
     </div>

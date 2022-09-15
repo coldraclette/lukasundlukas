@@ -25,13 +25,23 @@ export default function About({
 
   return (
     <>
-      <SEO title="About" desc="Lebensläufe von Lukas und Lukas" url="about" />
+      <SEO
+        title="about"
+        desc="Tja. Was gibt es über uns zu sagen? Wir sind Lukas und Lukas. Wir sind seit fast vier Jahren ein Kreateam bei thjnk Zürich und haben schon davor bei Jung von Matt das ein oder andere Projekt zusammen gestemmt."
+        url="about"
+      />
       <div className="md:flex justify-between">
         <div className="flex-1 md:mr-4">
-          <PortableText value={aboutPageData.body_left} components={components} />
+          <PortableText
+            value={aboutPageData.body_left}
+            components={components}
+          />
         </div>
         <div className="flex-1 md:mr-4">
-          <PortableText value={aboutPageData.body_right} components={components} />
+          <PortableText
+            value={aboutPageData.body_right}
+            components={components}
+          />
         </div>
       </div>
       <div className="md:flex justify-between mt-4">
