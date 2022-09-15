@@ -13,5 +13,10 @@ export default {
       title: "Awards",
       type: "string",
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+    },
   ],
 };
