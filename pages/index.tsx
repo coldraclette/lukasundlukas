@@ -16,7 +16,7 @@ export default function Home({ data, projects }: any) {
 
   return (
     <div>
-      <SEO desc={subtitle} imgUrl="/public/images/lukasundlukas_screenshot.png" url="/" />
+      <SEO desc={subtitle} imgUrl="https://cdn.sanity.io/images/f1fpvcke/production/89943e003bfb1b008743d4385f8cfb6990592a16-1373x1147.png" url="/" />
       <Hero title={title} subtitle={subtitle} introduction={introduction} />
       <WorkWrapper projects={projects} />
     </div>
