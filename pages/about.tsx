@@ -18,7 +18,7 @@ export default function About({
   const components: PortableTextComponents = {
     block: {
       normal: ({ children }) => (
-        <p className="mb-2 md:text-lg font-thin">{children}</p>
+        <p className="mb-2 md:text-base font-thin">{children}</p>
       ),
     },
   };
@@ -26,7 +26,14 @@ export default function About({
   return (
     <>
       <SEO title="About" desc="Lebensläufe von Lukas und Lukas" url="about" />
-      <PortableText value={aboutPageData.body} components={components} />
+      <div className="md:flex justify-between">
+        <div className="flex-1 md:mr-4">
+          <PortableText value={aboutPageData.body_left} components={components} />
+        </div>
+        <div className="flex-1 md:mr-4">
+          <PortableText value={aboutPageData.body_right} components={components} />
+        </div>
+      </div>
       <div className="md:flex justify-between mt-4">
         <CV
           aboutData={amgwerdData.aboutData}
