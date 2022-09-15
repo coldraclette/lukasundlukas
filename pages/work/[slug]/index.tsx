@@ -13,7 +13,7 @@ interface Props {
 
 export default function SingleWorkPage({ project }: Props) {
   const seoTitle = `${project.title} - ${project.subtitle}`;
-
+  
   return (
     <div>
       <SEO

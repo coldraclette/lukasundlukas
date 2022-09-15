@@ -13,8 +13,8 @@ export const renderVideo = ({ video }: any) => {
     <div className="my-4">
       {video.map((vid: any, index: number) => {
         return (
-          <video key={index} controls preload="metadata" width="100%" className="mb-4">
-            <source src={returnVideoUrl(vid)+"#t0.1"} />
+          <video key={index} controls preload="auto" width="100%" className="mb-4">
+            <source src={returnVideoUrl(vid)+"#t=000.1"} type="video/mp4" />
           </video>
         );
       })}
